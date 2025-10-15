@@ -36,7 +36,7 @@ def generateCwpToken(accessKey: str, accessSecret: str) -> Tuple[int, str]:
         )
         if response.status_code == 200:
             data = response.json()
-            logging.info("Authentication token acquired successfully.")
+            logging.debug("Authentication token acquired successfully.")
             return 200, data.get("token", "")
         else:
             logging.error(
@@ -70,9 +70,7 @@ def main():
 
     # Print the token and exit
     if auth_status == 200 and cwpToken:
-        print("\n--- Auth Token ---")
         print(cwpToken)
-        print("------------------\n")
         exit(0)  # Exit successfully
     else:
         logging.error("Could not generate token. Exiting.")
