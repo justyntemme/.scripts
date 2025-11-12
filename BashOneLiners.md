@@ -6,6 +6,12 @@ find . -type f ! -name "\*.avi"
 
 find . -type d -name "Sample"
 
+# Delete all non AVI files (replace with whatever extension the video is in)
+
+# WARNING MUST run in directory with TV show or will delete all videos
+
+find . -type f ! -name "\*.avi" -delete
+
 # Unrar all files in directories recursively
 
-find . -type f -name "*.rar" -execdir unrar e {} \;
+find . -type f -name "\*.rar" -execdir unrar e {} \;
