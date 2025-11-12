@@ -8,4 +8,4 @@ find . -type d -name "Sample"
 
 # Unrar all files in directories recursively
 
-find . -type f -name "\*.rar" -execdir unrar e {} \;
+find . -type f -name "*.rar" -execdir unrar e {} \;
